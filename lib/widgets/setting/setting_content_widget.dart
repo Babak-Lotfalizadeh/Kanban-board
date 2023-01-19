@@ -88,75 +88,70 @@ class SettingContentWidget extends StatelessWidget {
           ),
         );
 
-    return Center(
-      child: Container(
-        constraints: ScreenValues.mobileConstraints,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SettingCategoryWidget(
-              title: strings?.general ?? "",
-              items: [
-                SettingItemCard(
-                  title: strings?.language ?? "",
-                  iconData: Icons.language_outlined,
-                  value: strings?.currentLanguage,
-                  onClick: () => _showChangeLanguage(context),
-                ),
-              ],
-            ),
-            SettingCategoryWidget(
-              title: strings?.theme ?? "",
-              items: [
-                SettingItemCard(
-                  title: strings?.darkMode ?? "",
-                  iconData: Icons.dark_mode_outlined,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: ScreenValues.paddingLarge,
-                  ),
-                  widgetValue: SwitchWidget(
-                    value: isDarkMode,
-                    onChanged: context.read<ThemeProvider>().setDarkMode,
-                  ),
-                  onClick: () => context.read<ThemeProvider>().toggleDarkMode(),
-                ),
-                SettingItemCard(
-                  title: strings?.material3 ?? "",
-                  iconData: Icons.adb,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: ScreenValues.paddingLarge,
-                  ),
-                  widgetValue: SwitchWidget(
-                    value: context.watch<ThemeProvider>().material3,
-                    onChanged: context.read<ThemeProvider>().setMaterial3,
-                  ),
-                  onClick: () =>
-                      context.read<ThemeProvider>().toggleMaterial3(),
-                ),
-                SettingItemCard(
-                  title: "${strings?.primaryColor ?? " "} ${inThisMode()}",
-                  iconData: Icons.color_lens_outlined,
-                  widgetValue: icon(Theme.of(context).primaryColor),
-                  onClick: () => _showChangeThemePrimary(context),
-                ),
-                SettingItemCard(
-                  title: "${strings?.primaryTextColor ?? ""} ${inThisMode()}",
-                  iconData: Icons.format_color_text_outlined,
-                  widgetValue:
-                      icon(Theme.of(context).textTheme.bodyText1?.color),
-                  onClick: () => _showChangeThemePrimaryText(context),
-                ),
-                SettingItemCard(
-                  title: "${strings?.secondaryColor ?? ""} ${inThisMode()}",
-                  iconData: Icons.color_lens_outlined,
-                  widgetValue: icon(Theme.of(context).colorScheme.secondary),
-                  onClick: () => _showChangeThemeSecondary(context),
-                ),
-              ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SettingCategoryWidget(
+          title: strings?.general ?? "",
+          items: [
+            SettingItemCard(
+              title: strings?.language ?? "",
+              iconData: Icons.language_outlined,
+              value: strings?.currentLanguage,
+              onClick: () => _showChangeLanguage(context),
             ),
           ],
         ),
-      ),
+        SettingCategoryWidget(
+          title: strings?.theme ?? "",
+          items: [
+            SettingItemCard(
+              title: strings?.darkMode ?? "",
+              iconData: Icons.dark_mode_outlined,
+              padding: const EdgeInsets.symmetric(
+                horizontal: ScreenValues.paddingLarge,
+              ),
+              widgetValue: SwitchWidget(
+                value: isDarkMode,
+                onChanged: context.read<ThemeProvider>().setDarkMode,
+              ),
+              onClick: () => context.read<ThemeProvider>().toggleDarkMode(),
+            ),
+            SettingItemCard(
+              title: strings?.material3 ?? "",
+              iconData: Icons.adb,
+              padding: const EdgeInsets.symmetric(
+                horizontal: ScreenValues.paddingLarge,
+              ),
+              widgetValue: SwitchWidget(
+                value: context.watch<ThemeProvider>().material3,
+                onChanged: context.read<ThemeProvider>().setMaterial3,
+              ),
+              onClick: () =>
+                  context.read<ThemeProvider>().toggleMaterial3(),
+            ),
+            SettingItemCard(
+              title: "${strings?.primaryColor ?? " "} ${inThisMode()}",
+              iconData: Icons.color_lens_outlined,
+              widgetValue: icon(Theme.of(context).primaryColor),
+              onClick: () => _showChangeThemePrimary(context),
+            ),
+            SettingItemCard(
+              title: "${strings?.primaryTextColor ?? ""} ${inThisMode()}",
+              iconData: Icons.format_color_text_outlined,
+              widgetValue:
+                  icon(Theme.of(context).textTheme.bodyText1?.color),
+              onClick: () => _showChangeThemePrimaryText(context),
+            ),
+            SettingItemCard(
+              title: "${strings?.secondaryColor ?? ""} ${inThisMode()}",
+              iconData: Icons.color_lens_outlined,
+              widgetValue: icon(Theme.of(context).colorScheme.secondary),
+              onClick: () => _showChangeThemeSecondary(context),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

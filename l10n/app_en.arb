@@ -14,5 +14,22 @@
   "primaryTextColor": "Primary text color",
   "inDarkMode": "in dark mode",
   "inLightMode": "in light mode",
-  "material3": "Material 3"
+  "material3": "Material 3",
+  "login": "Login",
+  "lengthError": "length can not be under",
+  "characters": "characters",
+  "regexErrorEmail": "not a valid email address",
+  "regexErrorPassword": "Must be contained at least 8 characters,at least one uppercase letter, one lowercase letter, one number and one special character",
+  "fieldCanNotBeEmpty": "Field can not be empty",
+  "register": "Register",
+  "userName": "User name",
+  "password": "Password",
+  "passwordConfirm": "Password confirm",
+  "unknownError": "Unknown error",
+  "userNotFound": "No user found for that email.",
+  "wrongPassword": "Wrong password provided for that user.",
+  "alreadyHaveAnAccount": "Already have an account",
+  "doNotHaveAnAccount": "Don't have an account",
+  "createAccount": "Create account",
+  "passwordAndPasswordConfirmValueIsNotMatch": "value of password field and password confirm field are not match."
 }

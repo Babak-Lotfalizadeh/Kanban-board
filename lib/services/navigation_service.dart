@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class NavigationService {
   static final navigatorKey = GlobalKey<NavigatorState>();
   static final NavigationService _instance = NavigationService._internal();
+
   factory NavigationService() {
     return _instance;
   }
+
   NavigationService._internal();
 
   static BuildContext? get _context => navigatorKey.currentContext;
@@ -32,7 +34,7 @@ class NavigationService {
           MaterialPageRoute(
             builder: (context) => page,
           ),
-              (Route<dynamic> route) => false);
+          (Route<dynamic> route) => false);
     }
   }
 
