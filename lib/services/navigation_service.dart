@@ -15,4 +15,45 @@ class NavigationService {
       return Navigator.of(_context!).pop(object);
     }
   }
+
+  static void pushAndReplace(Widget page) {
+    if (_context != null) {
+      Navigator.of(_context!).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => page,
+        ),
+      );
+    }
+  }
+
+  static void pushAndRemoveUntil(Widget page) {
+    if (_context != null) {
+      Navigator.of(_context!).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => page,
+          ),
+              (Route<dynamic> route) => false);
+    }
+  }
+
+  static void push(Widget page) {
+    if (_context != null) {
+      Navigator.of(_context!).push(
+        MaterialPageRoute(
+          builder: (context) => page,
+        ),
+      );
+    }
+  }
+
+  static void popPush(Widget page) {
+    if (_context != null) {
+      Navigator.of(_context!).pop();
+      Navigator.of(_context!).push(
+        MaterialPageRoute(
+          builder: (context) => page,
+        ),
+      );
+    }
+  }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "25670120802",
+    "project_id": "flutter-kanban-board",
+    "storage_bucket": "flutter-kanban-board.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25670120802:android:25032a789e16f08e82283b",
+        "android_client_info": {
+          "package_name": "com.babak.kanban_board"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25670120802-g523eb0mfd3no8o6i9jg5errk3m4o0qj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdmoghSzBHsVMKCUb5Em_USIIeMotbVws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25670120802-g523eb0mfd3no8o6i9jg5errk3m4o0qj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

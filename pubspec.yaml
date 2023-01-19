@@ -13,9 +13,14 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   provider: ^6.0.4
+  firebase_core: ^2.4.0
+  firebase_auth: ^4.2.1
   cupertino_icons: ^1.0.2
+  firebase_database: ^10.0.8
+  firebase_analytics: ^10.0.7
   shared_preferences: ^2.0.15
   flutter_colorpicker: ^1.0.3
+  firebase_crashlytics: ^3.0.7
 
 dev_dependencies:
   flutter_test:
