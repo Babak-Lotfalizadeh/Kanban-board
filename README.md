@@ -1,16 +1,18 @@
 # kanban_board
 
-A new Flutter project.
+A test project for Kanban board
+# inspire by
+https://dribbble.com/shots/16651551-Simple-kanban-board-Dark-Mode
 
-## Getting Started
+# features
+## Setting page
+## Multi language
+## Custom Theme color, primary, secondary, text color  
+## dark mode/ light mode
+## provider state management
+## shared_preferences for local data
+## web / mobile design
+## material 2 / material 3 switch in setting
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Structure
+Folders By Type/Domain
