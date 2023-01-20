@@ -206,7 +206,6 @@ class HomeProvider extends ChangeNotifier {
   }
 
   Future<void> _shareFile(String path) async {
-    print(path);
     await FlutterShare.shareFile(
       title: 'CSV',
       text: 'share CSV',
