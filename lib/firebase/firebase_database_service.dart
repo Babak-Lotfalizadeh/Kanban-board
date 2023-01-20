@@ -24,13 +24,16 @@ class FirebaseDatabaseService {
     DatabaseReference? ref = _database?.ref(
       Routes.userData(userId ?? ""),
     );
+    try {
+      var data = (await ref?.onValue.first)?.snapshot.value;
+      var mapObject = data as Map<Object?, Object?>;
+      var mapDynamic = Map<String, dynamic>.from(mapObject);
+      var result = UserDataViewModel.fromJson(mapDynamic);
 
-    var data = (await ref?.onValue.first)?.snapshot.value;
-    var mapObject = data as Map<Object?, Object?>;
-    var mapDynamic = Map<String, dynamic>.from(mapObject);
-    var result  = UserDataViewModel.fromJson(mapDynamic);
-
-    return result.items;
+      return result.items;
+    }catch(e){
+      return [];
+    }
   }
 
   Future<void> setUserData({

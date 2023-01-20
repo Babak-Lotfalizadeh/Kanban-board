@@ -25,27 +25,29 @@ class HomeProvider extends ChangeNotifier {
   List<KanbanViewModel> _items = [];
 
   void init() {
+    var defaultItems = [
+      KanbanViewModel(
+        id: 0,
+        kanbanEnum: KanbanEnum.todo,
+        items: [],
+      ),
+      KanbanViewModel(
+        id: 1,
+        kanbanEnum: KanbanEnum.inProgress,
+        items: [],
+      ),
+      KanbanViewModel(
+        id: 2,
+        kanbanEnum: KanbanEnum.don,
+        items: [],
+      ),
+    ];
+    _items.clear();
     FirebaseDatabaseService().getUserData(_userId).then((value) {
       if (value.isNotEmpty) {
         _items = value;
       } else {
-        _items.addAll([
-          KanbanViewModel(
-            id: 0,
-            kanbanEnum: KanbanEnum.todo,
-            items: [],
-          ),
-          KanbanViewModel(
-            id: 1,
-            kanbanEnum: KanbanEnum.inProgress,
-            items: [],
-          ),
-          KanbanViewModel(
-            id: 2,
-            kanbanEnum: KanbanEnum.don,
-            items: [],
-          ),
-        ]);
+        _items.addAll(defaultItems);
       }
       notifyListeners();
     });
