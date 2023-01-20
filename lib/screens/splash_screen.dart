@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kanban_board/constants/screen_values.dart';
+import 'package:kanban_board/providers/home_provider.dart';
 import 'package:kanban_board/screens/home_screen.dart';
 import 'package:kanban_board/screens/login_screen.dart';
 import 'package:kanban_board/services/navigation_service.dart';
 import 'package:kanban_board/firebase/firebase_authentication_service.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -25,6 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var currentUser = FirebaseAuthenticationService().currentUser;
     Widget destination = const LoginScreen();
     if (currentUser != null) {
+      context.read<HomeProvider>().init();
       destination = const HomeScreen();
     }
     NavigationService.pushAndReplace(destination);

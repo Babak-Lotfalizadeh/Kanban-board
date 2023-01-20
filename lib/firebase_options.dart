@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '25670120802',
     projectId: 'flutter-kanban-board',
     authDomain: 'flutter-kanban-board.firebaseapp.com',
+    databaseURL: 'https://flutter-kanban-board-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'flutter-kanban-board.appspot.com',
     measurementId: 'G-ZRNBKF7F88',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:25670120802:android:25032a789e16f08e82283b',
     messagingSenderId: '25670120802',
     projectId: 'flutter-kanban-board',
+    databaseURL: 'https://flutter-kanban-board-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'flutter-kanban-board.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:25670120802:ios:711aafbff593e05b82283b',
     messagingSenderId: '25670120802',
     projectId: 'flutter-kanban-board',
+    databaseURL: 'https://flutter-kanban-board-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'flutter-kanban-board.appspot.com',
     iosClientId: '25670120802-phnvjrja177f4lqild2pp0c65rk6i2t5.apps.googleusercontent.com',
     iosBundleId: 'com.babak.kanbanBoard',
@@ -76,6 +79,7 @@ class DefaultFirebaseOptions {
     appId: '1:25670120802:ios:711aafbff593e05b82283b',
     messagingSenderId: '25670120802',
     projectId: 'flutter-kanban-board',
+    databaseURL: 'https://flutter-kanban-board-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'flutter-kanban-board.appspot.com',
     iosClientId: '25670120802-phnvjrja177f4lqild2pp0c65rk6i2t5.apps.googleusercontent.com',
     iosBundleId: 'com.babak.kanbanBoard',

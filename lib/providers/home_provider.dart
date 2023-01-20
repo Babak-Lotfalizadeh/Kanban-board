@@ -15,42 +15,32 @@ class HomeProvider extends ChangeNotifier {
 
   List<KanbanViewModel> get items => _items;
   List<KanbanViewModel> _items = [
-    //todo dummy data
-    KanbanViewModel(
-      id: 0,
-      kanbanEnum: KanbanEnum.todo,
-      items: [
-        TaskViewModel(
-          id: const Uuid().v1(),
-          order: 1,
-          title: "Lorem ipsum dolor sit amet",
-          description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        ),
-        TaskViewModel(
-          id: const Uuid().v1(),
-          order: 2,
-          title: "eiusmod tempor incididunt",
-          description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        ),
-      ],
-    ),
-    KanbanViewModel(
-      id: 1,
-      kanbanEnum: KanbanEnum.inProgress,
-      items: [],
-    ),
-    KanbanViewModel(
-      id: 2,
-      kanbanEnum: KanbanEnum.don,
-      items: [],
-    ),
+
   ];
 
   void init(){
     FirebaseDatabaseService().getUserData(_userId).then((value) {
-      _items = value;
+      if(value.isNotEmpty){
+        _items = value;
+      }else{
+        _items.addAll([
+          KanbanViewModel(
+            id: 0,
+            kanbanEnum: KanbanEnum.todo,
+            items: [],
+          ),
+          KanbanViewModel(
+            id: 1,
+            kanbanEnum: KanbanEnum.inProgress,
+            items: [],
+          ),
+          KanbanViewModel(
+            id: 2,
+            kanbanEnum: KanbanEnum.don,
+            items: [],
+          ),
+        ]);
+      }
       notifyListeners();
     });
   }
@@ -102,7 +92,7 @@ class HomeProvider extends ChangeNotifier {
       for (int i = 0; i < kanbanViewModel.items.length; i++) {
         kanbanViewModel.items[i].order = (i + 1);
       }
-      notifyListeners();
+      syncData();
     });
   }
 
@@ -128,7 +118,7 @@ class HomeProvider extends ChangeNotifier {
         );
       }
     });
-    notifyListeners();
+    syncData();
   }
 
   void addNewItem(String value) {
@@ -137,7 +127,7 @@ class HomeProvider extends ChangeNotifier {
       order: _items.first.items.length,
       title: value,
     ));
-    notifyListeners();
+    syncData();
   }
 
   TaskViewModel getTask(String taskId) {
@@ -166,6 +156,11 @@ class HomeProvider extends ChangeNotifier {
     item.order = newModel.order;
     item.endDate = newModel.endDate;
     item.startDate = newModel.startDate;
+    syncData();
+  }
+
+  void syncData(){
     notifyListeners();
+    FirebaseDatabaseService().setUserData(items: _items,userId: _userId);
   }
 }

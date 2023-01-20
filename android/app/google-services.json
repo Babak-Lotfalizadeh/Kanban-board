@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "25670120802",
+    "firebase_url": "https://flutter-kanban-board-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "flutter-kanban-board",
     "storage_bucket": "flutter-kanban-board.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "25670120802-g523eb0mfd3no8o6i9jg5errk3m4o0qj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "25670120802-phnvjrja177f4lqild2pp0c65rk6i2t5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.babak.kanbanBoard"
+              }
             }
           ]
         }
