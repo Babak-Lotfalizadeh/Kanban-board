@@ -41,6 +41,13 @@
   "todo": "To Do",
   "inProgress": "In Progress",
   "don": "Don",
-  "taskDetails": "Task details"
+  "taskDetails": "Task details",
+  "timer": "Timer",
+  "startAt": "Start at",
+  "notStarted":"Not started yet",
+  "endAt": "End at",
+  "notEnded":"Not ended yet",
+  "process": "process",
+  "unKnown":"unKnown"
 
 }

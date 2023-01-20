@@ -88,6 +88,13 @@ class HomeProvider extends ChangeNotifier {
       } else if (newPos > kanbanViewModel.items.length) {
         newPos = kanbanViewModel.items.length;
       }
+      if(kanbanViewModel.kanbanEnum == KanbanEnum.inProgress){
+        taskViewModel.startDate = DateTime.now().toIso8601String();
+      }
+      else if(kanbanViewModel.kanbanEnum == KanbanEnum.don){
+        taskViewModel.endDate = DateTime.now().toIso8601String();
+      }
+
       kanbanViewModel.items.insert(newPos, taskViewModel);
       for (int i = 0; i < kanbanViewModel.items.length; i++) {
         kanbanViewModel.items[i].order = (i + 1);

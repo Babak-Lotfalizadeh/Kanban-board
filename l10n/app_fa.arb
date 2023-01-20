@@ -39,7 +39,14 @@
   "todo": "برای انجام",
   "inProgress": "در دست اقدام",
   "don": "تمام شده",
-  "taskDetails": "جزئیات تسک"
+  "taskDetails": "جزئیات تسک",
+  "timer": "زمان",
+  "startAt": "شروع از",
+  "notStarted":"شروع نشده",
+  "endAt": "پایان در",
+  "notEnded":"پایان نیافته",
+  "process": "پروسه",
+  "unKnown":"نا مشخص"
 
 
 }
