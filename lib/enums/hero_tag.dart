@@ -1,0 +1,4 @@
+enum HeroTag {
+  taskTitle,
+  taskDescription,
+}

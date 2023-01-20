@@ -1,5 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
+import 'package:kanban_board/enums/routes.dart';
+import 'package:kanban_board/view_model/kanban_view_model.dart';
 
 class FirebaseDatabaseService {
   static FirebaseDatabase? _database;
@@ -16,39 +18,19 @@ class FirebaseDatabaseService {
     _database = FirebaseDatabase.instance;
     _database?.setLoggingEnabled(kDebugMode);
   }
-  //
-  // Stream<List<ContactViewModel>?>? getContacts(String? userId) {
-  //   //todo separate delete, add and update
-  //   DatabaseReference? ref = _database?.ref(
-  //     Routes.contacts(userId ?? ""),
-  //   );
-  //
-  //   return ref?.onValue.map((event) {
-  //     return event.snapshot.children
-  //         .map(
-  //           (element) => ContactViewModel.fromJson(
-  //             Map<String, dynamic>.from(element.value as Map<Object?, Object?>),
-  //           ),
-  //         )
-  //         .toList();
-  //   });
-  // }
-  //
-  // Stream<List<ChatViewModel>?>? getChats(String? chatId) {
-  //   //todo separate delete, add and update
-  //   DatabaseReference? ref = _database?.ref(
-  //     Routes.chats(chatId ?? ""),
-  //   );
-  //
-  //   return ref?.onValue.map((event) {
-  //     return event.snapshot.children
-  //         .map((element) => ChatViewModel.fromJson(
-  //               Map<String, dynamic>.from(
-  //                   element.value as Map<Object?, Object?>),
-  //             ))
-  //         .toList();
-  //   });
-  // }
+
+  Future<List<KanbanViewModel>> getUserData(String? userId) async {
+    DatabaseReference? ref = _database?.ref(
+      Routes.userData(userId ?? ""),
+    );
+
+    var data = await ref?.onValue.toList();
+    return data?.map((element) => KanbanViewModel.fromJson(
+        Map<String, dynamic>.from(element.snapshot.value as Map<Object?, Object?>),
+      ),
+    )
+        .toList() ?? [];
+  }
 
   // Future<void> sendMessage({
   //   required String? userId,

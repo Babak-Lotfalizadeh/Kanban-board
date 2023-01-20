@@ -8,6 +8,8 @@ class ScreenValues {
   static const double paddingLarge = paddingNormal * 2;
   static const double paddingXLarge = paddingNormal * 3;
   static const double radiusSmall = radiusNormal * 0.1;
+  static const double smallImageSize = 100;
+  static const double normalImageSize = 200;
   static const double radiusNormal = 8;
   static const double radiusLarge = radiusNormal * 2;
   static const mobileConstraints = BoxConstraints(

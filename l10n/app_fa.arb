@@ -29,5 +29,17 @@
   "alreadyHaveAnAccount": "حساب کاربری دارم",
   "doNotHaveAnAccount": "حساب کاربری ندارم",
   "createAccount": "ساخت حساب",
-  "passwordAndPasswordConfirmValueIsNotMatch": "گذرواژه و تکرار ان با یکدیگر برار نیستند."
+  "passwordAndPasswordConfirmValueIsNotMatch": "گذرواژه و تکرار ان با یکدیگر برار نیستند.",
+  "createNewTask": "ساخت تسک جدید",
+  "taskTitle": "تیتر تسک",
+  "create": "ساخت",
+  "cancel": "انصراف",
+  "close": "خروج",
+  "tasks": "تسک ها",
+  "todo": "برای انجام",
+  "inProgress": "در دست اقدام",
+  "don": "تمام شده",
+  "taskDetails": "جزئیات تسک"
+
+
 }

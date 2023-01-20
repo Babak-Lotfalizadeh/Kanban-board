@@ -31,5 +31,16 @@
   "alreadyHaveAnAccount": "Already have an account",
   "doNotHaveAnAccount": "Don't have an account",
   "createAccount": "Create account",
-  "passwordAndPasswordConfirmValueIsNotMatch": "value of password field and password confirm field are not match."
+  "passwordAndPasswordConfirmValueIsNotMatch": "value of password field and password confirm field are not match.",
+  "createNewTask": "create new Task",
+  "taskTitle": "task title",
+  "create": "Create",
+  "cancel": "Cancel",
+  "close": "Close",
+  "tasks": "Tasks",
+  "todo": "To Do",
+  "inProgress": "In Progress",
+  "don": "Don",
+  "taskDetails": "Task details"
+
 }
