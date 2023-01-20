@@ -48,6 +48,9 @@
   "endAt": "End at",
   "notEnded":"Not ended yet",
   "process": "process",
-  "unKnown":"unKnown"
+  "unKnown":"unKnown",
+  "other": "Other",
+  "exportCSV": "export CSV",
+  "exportWasSuccessfully": "export was successfully done"
 
 }

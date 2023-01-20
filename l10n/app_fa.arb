@@ -46,7 +46,10 @@
   "endAt": "پایان در",
   "notEnded":"پایان نیافته",
   "process": "پروسه",
-  "unKnown":"نا مشخص"
+  "unKnown":"نا مشخص",
+  "other": "دیگر",
+  "exportCSV": "استخراج CSV",
+  "exportWasSuccessfully": "استخراج با موفقیت انجام شد"
 
 
 }

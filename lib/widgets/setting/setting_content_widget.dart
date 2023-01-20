@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kanban_board/constants/screen_values.dart';
+import 'package:kanban_board/providers/home_provider.dart';
 import 'package:kanban_board/providers/theme_provider.dart';
 import 'package:kanban_board/services/bottom_sheet_service.dart';
 import 'package:kanban_board/services/navigation_service.dart';
+import 'package:kanban_board/services/snack_bar_service.dart';
 import 'package:kanban_board/utilities/imports.dart';
 import 'package:kanban_board/widgets/setting/bottom_sheet_change_language.dart';
 import 'package:kanban_board/widgets/setting/bottom_sheet_change_theme.dart';
@@ -88,6 +90,15 @@ class SettingContentWidget extends StatelessWidget {
           ),
         );
 
+    void exportCSV(HomeProvider homeProvider) {
+      homeProvider.exportCSV().then((value) {
+        SnackBarService.show(
+          message: AppLocalizations.of(context)?.exportWasSuccessfully ?? "",
+          context: context,
+        );
+      });
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -127,8 +138,7 @@ class SettingContentWidget extends StatelessWidget {
                 value: context.watch<ThemeProvider>().material3,
                 onChanged: context.read<ThemeProvider>().setMaterial3,
               ),
-              onClick: () =>
-                  context.read<ThemeProvider>().toggleMaterial3(),
+              onClick: () => context.read<ThemeProvider>().toggleMaterial3(),
             ),
             SettingItemCard(
               title: "${strings?.primaryColor ?? " "} ${inThisMode()}",
@@ -139,8 +149,7 @@ class SettingContentWidget extends StatelessWidget {
             SettingItemCard(
               title: "${strings?.primaryTextColor ?? ""} ${inThisMode()}",
               iconData: Icons.format_color_text_outlined,
-              widgetValue:
-                  icon(Theme.of(context).textTheme.bodyText1?.color),
+              widgetValue: icon(Theme.of(context).textTheme.bodyText1?.color),
               onClick: () => _showChangeThemePrimaryText(context),
             ),
             SettingItemCard(
@@ -148,6 +157,21 @@ class SettingContentWidget extends StatelessWidget {
               iconData: Icons.color_lens_outlined,
               widgetValue: icon(Theme.of(context).colorScheme.secondary),
               onClick: () => _showChangeThemeSecondary(context),
+            ),
+          ],
+        ),
+        SettingCategoryWidget(
+          title: strings?.other ?? "",
+          items: [
+            Consumer<HomeProvider>(
+              builder: (context, homeProvider, child) => SettingItemCard(
+                title: strings?.exportCSV ?? "",
+                iconData: Icons.import_export,
+                widgetValue: homeProvider.savingCSV
+                    ? const CircularProgressIndicator()
+                    : null,
+                onClick: () => exportCSV(homeProvider),
+              ),
             ),
           ],
         ),

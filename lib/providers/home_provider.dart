@@ -1,9 +1,14 @@
+import 'dart:io';
+
+import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:kanban_board/enums/kanban_enum.dart';
 import 'package:kanban_board/firebase/firebase_authentication_service.dart';
 import 'package:kanban_board/firebase/firebase_database_service.dart';
 import 'package:kanban_board/view_model/kanban_view_model.dart';
 import 'package:kanban_board/view_model/task_view_model.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 
 class HomeProvider extends ChangeNotifier {
@@ -13,16 +18,17 @@ class HomeProvider extends ChangeNotifier {
     viewportFraction: 0.8,
   );
 
+  bool get savingCSV => _savingCSV;
+  bool _savingCSV = false;
+
   List<KanbanViewModel> get items => _items;
-  List<KanbanViewModel> _items = [
+  List<KanbanViewModel> _items = [];
 
-  ];
-
-  void init(){
+  void init() {
     FirebaseDatabaseService().getUserData(_userId).then((value) {
-      if(value.isNotEmpty){
+      if (value.isNotEmpty) {
         _items = value;
-      }else{
+      } else {
         _items.addAll([
           KanbanViewModel(
             id: 0,
@@ -88,10 +94,9 @@ class HomeProvider extends ChangeNotifier {
       } else if (newPos > kanbanViewModel.items.length) {
         newPos = kanbanViewModel.items.length;
       }
-      if(kanbanViewModel.kanbanEnum == KanbanEnum.inProgress){
+      if (kanbanViewModel.kanbanEnum == KanbanEnum.inProgress) {
         taskViewModel.startDate = DateTime.now().toIso8601String();
-      }
-      else if(kanbanViewModel.kanbanEnum == KanbanEnum.don){
+      } else if (kanbanViewModel.kanbanEnum == KanbanEnum.don) {
         taskViewModel.endDate = DateTime.now().toIso8601String();
       }
 
@@ -166,8 +171,46 @@ class HomeProvider extends ChangeNotifier {
     syncData();
   }
 
-  void syncData(){
+  void syncData() {
     notifyListeners();
-    FirebaseDatabaseService().setUserData(items: _items,userId: _userId);
+    FirebaseDatabaseService().setUserData(items: _items, userId: _userId);
+  }
+
+  Future<void> exportCSV() async {
+    if(_savingCSV) return;
+    _savingCSV = true;
+    notifyListeners();
+    final String directory = ((await getExternalStorageDirectory()) ?? (await getApplicationDocumentsDirectory())).path;
+    final path = "$directory/csv-${DateTime.now()}.csv";
+    List<List<String>> data = [
+      ["taskId", "title", "description", "startDate", "endDate", "status"]
+    ];
+    for (var kanban in items) {
+      for (var element in kanban.items) {
+        data.add([
+          element.id,
+          element.title,
+          element.description ?? "",
+          element.startDate ?? "",
+          element.endDate ?? "",
+          kanban.kanbanEnum.toString(),
+        ]);
+      }
+    }
+    String csvData = const ListToCsvConverter().convert(data);
+    final File file = File(path);
+    await file.writeAsString(csvData);
+    await _shareFile(path);
+    _savingCSV = false;
+    notifyListeners();
+  }
+
+  Future<void> _shareFile(String path) async {
+    print(path);
+    await FlutterShare.shareFile(
+      title: 'CSV',
+      text: 'share CSV',
+      filePath: path,
+    );
   }
 }
