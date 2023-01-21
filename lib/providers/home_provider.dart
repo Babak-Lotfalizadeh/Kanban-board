@@ -98,6 +98,7 @@ class HomeProvider extends ChangeNotifier {
       }
       if (kanbanViewModel.kanbanEnum == KanbanEnum.inProgress) {
         taskViewModel.startDate = DateTime.now().toIso8601String();
+        taskViewModel.endDate = null;
       } else if (kanbanViewModel.kanbanEnum == KanbanEnum.don) {
         taskViewModel.endDate = DateTime.now().toIso8601String();
       }
