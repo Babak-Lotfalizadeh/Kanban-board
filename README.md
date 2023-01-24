@@ -48,15 +48,27 @@ using firebase for database and sync data with
 ## other features
 ### Setting page
 you can edit the colors, primary,secondary, text on this page, also you can change the app language and theme on this page too
-Multi language
-Custom Theme color, primary, secondary, text color  
-dark mode/ light mode
-provider state management
-shared_preferences for local data
-web / mobile design
-material 2 / material 3 switch in setting
-drag Items
-change page on drag items
-change page animation
-ability to have n columns (is static now because of multi language and no Back end)
-sync data with firebase realtime database
+### Multi language
+you can change the app language on the setting page
+### Custom Theme color, primary, secondary, text color  
+you can change the app theme on setting page
+### dark mode/ light mode
+this will be change base on the mobile / web theme , but you can change the dark mode on setting page and navigation menu too
+### provider state management
+the main state management for the app
+### shared_preferences for local data
+we save some information related to setting on local, so we used SP for that
+### web / mobile design
+we try to design app , so we can use on both web (large) and mobile screens
+### material 2 / material 3 switch in setting
+there are a switch on setting page that you can back to material 2 if you like it more
+### drag Items
+we add some ability to items on list / columns, so you can drag them and move to another list/ column. we use default widget and we don't used third party library for that, we simply used draggable widgets
+### change page on drag items
+we used page view for switch between the columns and after that we add a area and left and right side, so if any item drag to that , swith to next page or last page, so we can go next page easy , and I think this what are soo much user friendly compare to other  approach
+### change page animation
+we add animation to drag Items and move them and changing the page so user have smooth experience
+### ability to have n columns (is static now because of multi language and no Back end)
+this ability are exist to have custom column, n number of them, but for that to be working we need some kind of clound function or server api, so we can handle the language, we can add that in future if we need that
+### sync data with firebase realtime database
+all data related to kanban are sync to firestore for each user, that why we have login section, and all of this data are secure and save for one user, and other users can not access that, we can create a team ability later so every one under a team can access the same data.
