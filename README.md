@@ -24,6 +24,13 @@ then you can move that task to in progress so you can see the timer
 after that you can move that to don , in this case task are finish adn you can see the timer has stopped and time are recorded
 you can swith between board just by sweeping on mobile , 
 you can drag an item and move it to right side, this will let you move the task to next column, and rop it there 
+this app support multi language, so you can change that on setting page
+for that you can click on navigation menu on top left side
+click on setting button
+then click on language section and select you designer language
+also in this page you can change the theme of application
+you can change drake mode or light mode on setting and also in navigation menu in home page.
+but if you dont do that, app going to on dark mode if your phone is on dark mode
 
 # Technical details
 in this section we talk mainly about Technical details of project
@@ -39,7 +46,8 @@ provider
 using firebase for database and sync data with
 
 ## other features
-Setting page
+### Setting page
+you can edit the colors, primary,secondary, text on this page, also you can change the app language and theme on this page too
 Multi language
 Custom Theme color, primary, secondary, text color  
 dark mode/ light mode
