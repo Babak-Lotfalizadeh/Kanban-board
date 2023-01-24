@@ -3,39 +3,39 @@
 The Kanban Board project is a mobile application built using the Flutter framework. It allows users to create and manage tasks in a simple and intuitive way, using the Kanban methodology. The app is designed to be user-friendly and easy to navigate, making it a great tool for individuals, teams, and organizations.
 
 # Features
-Create and manage tasks using the Kanban methodology__
-Drag and drop tasks between columns__
-Add labels and description for tasks__
-Start a timer when task go to in Progress and finish when goes to don section__
-Easily view and update task details__
+Create and manage tasks using the Kanban methodology<br />
+Drag and drop tasks between columns<br />
+Add labels and description for tasks<br />
+Start a timer when task go to in Progress and finish when goes to don section<br />
+Easily view and update task details<br />
 
 
 # Getting Started:
-you can download the source or fork it in android studio or any other Idea__  
-if you don't have Flutter you need to download that so Idea can run the surce code__
-if you don't have it you need to follow this :https://docs.flutter.dev/get-started/install__
-after that you need to create a Virtual device or connect a real device to the system and create a build or run the app on it__ 
-in first step you need to create a user , we dont have any limit on it right now, we use user because we save all the information about the Kanban on the user__
-if you have the user you can use that and login.__
-in the first page you can see three column, To do , in progress and don__ 
-for start you can create a task, and name it , this task will move to "to do section"__
-then you can click on it to update that, add description and more__
-then you can move that task to in progress so you can see the timer__ 
-after that you can move that to don , in this case task are finish adn you can see the timer has stopped and time are recorded__
-you can swith between board just by sweeping on mobile ,__ 
-you can drag an item and move it to right side, this will let you move the task to next column, and rop it there__ 
-this app support multi language, so you can change that on setting page__
-for that you can click on navigation menu on top left side__
-click on setting button__
-then click on language section and select you designer language__
-also in this page you can change the theme of application__
-you can change drake mode or light mode on setting and also in navigation menu in home page.__
-but if you dont do that, app going to on dark mode if your phone is on dark mode__
+you can download the source or fork it in android studio or any other Idea<br />  
+if you don't have Flutter you need to download that so Idea can run the surce code<br />
+if you don't have it you need to follow this :https://docs.flutter.dev/get-started/install<br />
+after that you need to create a Virtual device or connect a real device to the system and create a build or run the app on it<br /> 
+in first step you need to create a user , we dont have any limit on it right now, we use user because we save all the information about the Kanban on the user<br />
+if you have the user you can use that and login.<br />
+in the first page you can see three column, To do , in progress and don<br /> 
+for start you can create a task, and name it , this task will move to "to do section"<br />
+then you can click on it to update that, add description and more<br />
+then you can move that task to in progress so you can see the timer<br /> 
+after that you can move that to don , in this case task are finish adn you can see the timer has stopped and time are recorded<br />
+you can swith between board just by sweeping on mobile ,<br /> 
+you can drag an item and move it to right side, this will let you move the task to next column, and rop it there<br /> 
+this app support multi language, so you can change that on setting page<br />
+for that you can click on navigation menu on top left side<br />
+click on setting button<br />
+then click on language section and select you designer language<br />
+also in this page you can change the theme of application<br />
+you can change drake mode or light mode on setting and also in navigation menu in home page.<br />
+but if you dont do that, app going to on dark mode if your phone is on dark mode<br />
 
 # Technical details
-in this section we talk mainly about Technical details of project__
-The application is built using the Flutter framework__
-we used the latest version of flutter 3.3.10 and dart version of 2.18.6__
+in this section we talk mainly about Technical details of project<br />
+The application is built using the Flutter framework<br />
+we used the latest version of flutter 3.3.10 and dart version of 2.18.6<br />
 
 
 ## Structure
