@@ -1,25 +1,54 @@
-# kanban_board
+# kanban_board Introduction
 
-A test project for Kanban board
-# inspire by
-https://dribbble.com/shots/16651551-Simple-kanban-board-Dark-Mode
+The Kanban Board project is a mobile application built using the Flutter framework. It allows users to create and manage tasks in a simple and intuitive way, using the Kanban methodology. The app is designed to be user-friendly and easy to navigate, making it a great tool for individuals, teams, and organizations.
 
-# features
-## Setting page
-## Multi language
-## Custom Theme color, primary, secondary, text color  
-## dark mode/ light mode
-## provider state management
-## shared_preferences for local data
-## web / mobile design
-## material 2 / material 3 switch in setting
-## drag Items
-## change page on drag items
-## change page animation
-## ability to have n columns (is static now because of multi language and no Back end)
+# Features
+Create and manage tasks using the Kanban methodology
+Drag and drop tasks between columns
+Add labels and description for tasks
+Start a timer when task go to in Progress and finish when goes to don section
+Easily view and update task details
 
 
-## sync data with firebase realtime database
+# Getting Started:
+you can download the source or fork it in android studio or any other Idea  
+if you don't have Flutter you need to download that so Idea can run the surce code
+if you don't have it you need to follow this :https://docs.flutter.dev/get-started/install
+after that you need to create a Virtual device or connect a real device to the system and create a build or run the app on it 
+in first step you need to create a user , we dont have any limit on it right now, we use user because we save all the information about the Kanban on the user
+if you have the user you can use that and login.
+in the first page you can see three column, To do , in progress and don 
+for start you can create a task, and name it , this task will move to "to do section"
+then you can click on it to update that, add description and more
+then you can move that task to in progress so you can see the timer 
+after that you can move that to don , in this case task are finish adn you can see the timer has stopped and time are recorded
+you can swith between board just by sweeping on mobile , 
+you can drag an item and move it to right side, this will let you move the task to next column, and rop it there 
 
-# Structure
+# Technical details
+in this section we talk mainly about Technical details of project
+The application is built using the Flutter framework
+we used the latest version of flutter 3.3.10 and dart version of 2.18.6
+
+
+## Structure
 Folders By Type/Domain
+## State management 
+provider
+## server / cloud
+using firebase for database and sync data with
+
+## other features
+Setting page
+Multi language
+Custom Theme color, primary, secondary, text color  
+dark mode/ light mode
+provider state management
+shared_preferences for local data
+web / mobile design
+material 2 / material 3 switch in setting
+drag Items
+change page on drag items
+change page animation
+ability to have n columns (is static now because of multi language and no Back end)
+sync data with firebase realtime database
